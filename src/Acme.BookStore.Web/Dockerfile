@@ -5,4 +5,4 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 COPY ["publish", "."]
-#ENTRYPOINT ["dotnet", "Acme.BookStore.Web.dll"]
+ENTRYPOINT ["dotnet", "Acme.BookStore.Web.dll"]
