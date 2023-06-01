@@ -1,8 +1,10 @@
 ﻿using System;
 using Volo.Abp.Domain.Entities.Auditing;
+using Volo.Abp.EventBus;
 
 namespace Acme.BookStore.Books
 {
+    [EventName("MyApp.Product.StockChange")]
     public class Book : AuditedAggregateRoot<Guid>
     {
         public string Name { get; set; }

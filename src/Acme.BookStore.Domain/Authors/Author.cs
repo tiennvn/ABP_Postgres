@@ -1,23 +1,22 @@
 ﻿using JetBrains.Annotations;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Volo.Abp.Domain.Entities.Auditing;
 using Volo.Abp;
+using Volo.Abp.Domain.Entities.Auditing;
+using Volo.Abp.EventBus;
 
 namespace Acme.BookStore.Authors
 {
     namespace Acme.BookStore.Authors
     {
+        [EventName("Author")]
+
         public class Author : FullAuditedAggregateRoot<Guid>
         {
-            public string Name { get; private set; }
+            public string Name { get; set; }
             public DateTime BirthDate { get; set; }
             public string ShortBio { get; set; }
 
-            private Author()
+            public Author()
             {
                 /* This constructor is for deserialization / ORM purpose */
             }
